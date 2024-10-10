@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Alert, Row, Col } from 'react-bootstrap';
 //router-dom
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 //api
 import api from "../api";
 
@@ -13,7 +13,8 @@ const ResetPassword = () => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const { token } = useParams();
-
+  const navigate = useNavigate();
+  
   //handle reset submite
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,6 +28,7 @@ const ResetPassword = () => {
       const response = await api.post(`/reset-password/${token}`, { password });      
       //set success msg
       setMessage(response.data.message);
+      setTimeout(() => navigate('/forgot-password'), 2000);
       setError('');
     } catch (error) {      
       setError(error && error.response.data.message);
