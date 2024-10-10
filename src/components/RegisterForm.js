@@ -38,7 +38,7 @@ const RegisterForm = () => {
         <Container className="d-flex justify-content-center align-items-center min-vh-100">
             <Row className="w-100 justify-content-center">
                 <Col md={6}>
-                    <h2 className="text-center mb-4">Forgot Password</h2>
+                    <h2 className="text-center mb-4">Register Here</h2>
                     <Form onSubmit={handleSubmit} className="border p-4 rounded shadow-sm bg-light">
                         {error && <Alert variant="danger">{error}</Alert>}
                         {message && <Alert variant="success">{message}</Alert>}
