@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Form, Button, Alert, Row, Col } from 'react-bootstrap';
 //router-dom
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 //api
 import api from "../api";
 
@@ -75,6 +75,7 @@ const RegisterForm = () => {
                         <Button variant="info" type="submit" className="custom-button w-100">
                             Send Reset Link
                         </Button>
+                        <Link to="/forgot-password" >forgot password</Link>
                     </Form>
                 </Col>
             </Row>
